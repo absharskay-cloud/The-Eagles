@@ -2,8 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- العنوان والأوسمة الخاصة بشعار ذكاء النسور للاستثمار -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ذكاء النسور للاستثمار - المملكة العربية السعودية</title>
     <meta property="og:title" content="ذكاء النسور للاستثمار - المملكة العربية السعودية" />
     <meta property="og:description" content="موقع شركة ذكاء النسور للاستثمار - خدمات استثمارية متكاملة بتصميم عصري" />
@@ -11,28 +10,26 @@
     <meta property="og:url" content="https://absharskay-cloud.github.io/The-Eagles/" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="1000215750.png.jpeg" />
-    <!-- خطوط جوجل العربية -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet" />
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- React & ReactDOM & Babel -->
     <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
     <style>
         /* ============================================================
-           التنسيقات الأساسية والمتغيرات وتأثيرات العصر الحديث
+           التنسيقات الأساسية واللمسات الفنية الاحترافية لشركة ذكاء النسور
            ============================================================ */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
         body {
             font-family: 'Cairo', sans-serif;
-            background-color: #0b1120;
-            color: #e2e8f0;
+            background-color: #060b18;
+            color: #f1f5f9;
             overflow-x: hidden;
         }
         :root {
@@ -41,19 +38,27 @@
             --blue-glow: #38bdf8;
         }
 
-        /* شريط التمرير */
+        /* شريط التمرير الذهبي الفاخر */
         ::-webkit-scrollbar {
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #0b1120;
+            background: #060b18;
         }
         ::-webkit-scrollbar-thumb {
-            background: var(--gold);
+            background: linear-gradient(180deg, #fbbf24, #d97706);
             border-radius: 10px;
         }
 
-        /* خلفية متحركة (أشكال هندسية) للقسم الرئيسي */
+        /* شبكة النيون المتحركة في الخلفية */
+        .cyber-grid {
+            background-image: linear-gradient(rgba(251, 191, 36, 0.03) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(251, 191, 36, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            background-position: center;
+        }
+
+        /* خلفية الكرات المتوهجة الهلامية المتحركة جافا سكريبت */
         .bg-shapes {
             position: absolute;
             top: 0;
@@ -67,111 +72,110 @@
         .shape {
             position: absolute;
             border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.25;
-            animation: floatShape 18s infinite alternate ease-in-out;
+            filter: blur(100px);
+            opacity: 0.15;
+            animation: floatShape 25s infinite alternate ease-in-out;
         }
         .shape:nth-child(1) {
-            width: 500px;
-            height: 500px;
+            width: 600px;
+            height: 600px;
             background: #fbbf24;
-            top: -15%;
-            right: -10%;
+            top: -10%;
+            right: -5%;
             animation-delay: 0s;
         }
         .shape:nth-child(2) {
-            width: 400px;
-            height: 400px;
-            background: #3b82f6;
-            bottom: -15%;
+            width: 500px;
+            height: 500px;
+            background: #0284c7;
+            bottom: 5%;
             left: -10%;
-            animation-delay: -6s;
+            animation-delay: -5s;
         }
         .shape:nth-child(3) {
-            width: 300px;
-            height: 300px;
-            background: #8b5cf6;
-            top: 40%;
-            left: 40%;
-            animation-delay: -12s;
+            width: 400px;
+            height: 400px;
+            background: #7c3aed;
+            top: 45%;
+            left: 35%;
+            animation-delay: -10s;
         }
         @keyframes floatShape {
-            0% {
-                transform: translate(0, 0) scale(1);
-            }
-            100% {
-                transform: translate(40px, -40px) scale(1.3);
-            }
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(60px, -60px) scale(1.25); }
         }
 
-        /* تأثير التلاشي عند التمرير */
+        /* تأثير الظهور والانزلاق الاحترافي */
         .fade-section {
             opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transform: translateY(40px);
+            transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), transform 1s cubic-bezier(0.22, 1, 0.36, 1);
         }
         .fade-section.visible {
             opacity: 1;
             transform: translateY(0);
         }
 
-        /* تأثير الزجاج (Glassmorphism) */
+        /* هيدر وتصميم الزجاج البلوري المطوّر */
         .glass {
-            background: rgba(30, 41, 59, 0.35);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            border: 1px solid rgba(251, 191, 36, 0.12);
+            background: rgba(11, 22, 44, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(251, 191, 36, 0.08);
+        }
+        .glass-premium {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.45) 0%, rgba(15, 23, 42, 0.75) 100%);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(251, 191, 36, 0.1);
         }
 
-        /* النص المتدرج الذهبي */
+        /* نصوص النيون الذهبية والمدرجة */
         .text-gradient {
-            background: linear-gradient(135deg, #fbbf24, #f59e0b, #fbbf24);
+            background: linear-gradient(135deg, #ffe082 0%, #fbbf24 50%, #d97706 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        /* الزر الذهبي */
+        /* تأثير الزر النيون الفخم */
         .btn-gold {
             background: linear-gradient(135deg, #fbbf24, #d97706);
-            color: #0b1120;
-            font-weight: 700;
-            padding: 14px 36px;
+            color: #060b18;
+            font-weight: 800;
             border-radius: 50px;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 25px rgba(251, 191, 36, 0.25);
-            border: none;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 4px 20px rgba(251, 191, 36, 0.2);
             cursor: pointer;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
         .btn-gold:hover {
-            transform: translateY(-4px) scale(1.04);
-            box-shadow: 0 0 50px rgba(251, 191, 36, 0.5);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(251, 191, 36, 0.45);
         }
 
-        /* البطاقات */
+        /* البطاقات الحديثة والفريدة هندسياً */
         .card-modern {
-            background: rgba(30, 41, 59, 0.5);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(251, 191, 36, 0.08);
-            border-radius: 24px;
-            padding: 28px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            height: 100%;
+            background: rgba(15, 23, 42, 0.55);
+            border: 1px solid rgba(251, 191, 36, 0.06);
+            border-radius: 28px;
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
         }
         .card-modern:hover {
-            transform: translateY(-12px) scale(1.01);
-            border-color: #fbbf24;
-            box-shadow: 0 25px 50px -12px rgba(251, 191, 36, 0.25);
+            transform: translateY(-10px);
+            border-color: rgba(251, 191, 36, 0.5);
+            box-shadow: 0 20px 40px -15px rgba(251, 191, 36, 0.15);
+            background: rgba(21, 32, 57, 0.65);
         }
 
-        /* روابط التنقل */
+        /* الروابط العلوية الذكية */
         .nav-link {
             position: relative;
             color: #94a3b8;
             transition: color 0.3s;
             font-weight: 600;
-            padding-bottom: 4px;
         }
         .nav-link:hover {
             color: #fbbf24;
@@ -181,45 +185,21 @@
             position: absolute;
             width: 0%;
             height: 2px;
-            bottom: 0;
+            bottom: -6px;
             right: 0;
-            background: #fbbf24;
+            background: linear-gradient(90deg, #fbbf24, #d97706);
             transition: width 0.3s ease;
         }
         .nav-link:hover::after {
             width: 100%;
         }
 
-        /* بطاقات المعلومات (العناوين) */
-        .info-card {
-            background: rgba(15, 23, 42, 0.7);
-            border: 1px solid rgba(251, 191, 36, 0.12);
-            border-radius: 20px;
-            padding: 24px;
-            transition: all 0.3s;
+        /* بطاقة المستشار ورئيس مجلس الإدارة الفخمة */
+        .ceo-card-glow {
+            box-shadow: 0 0 40px -10px rgba(251, 191, 36, 0.15);
         }
-        .info-card:hover {
-            border-color: #fbbf24;
-            transform: translateY(-6px);
-            background: rgba(251, 191, 36, 0.05);
-        }
-
-        /* ============================================================
-           خلفية العلامة المائية للشعار (Watermark)
-           سيتم تطبيقها على قسم Hero عبر الـ Inline Style في React
-           ============================================================ */
-        .watermark-bg {
-            background-size: 40% auto;
-            background-repeat: no-repeat;
-            background-position: center 30%;
-            opacity: 0.08;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            pointer-events: none;
+        .ceo-card-glow:hover {
+            box-shadow: 0 0 50px rgba(251, 191, 36, 0.3);
         }
     </style>
 </head>
@@ -228,21 +208,28 @@
     <div id="root"></div>
 
     <script type="text/babel">
-        // =========================================================
-        //  المكونات الرئيسية لموقع شركة ذكاء النسور (React JSX)
-        // =========================================================
-
         const { useState, useEffect, useRef } = React;
 
-        // ----- 1. مكون الرأس (Header) -----
+        // ----- 1. مكون الرأس الذكي والمطوّر (Header) -----
         function Header() {
             const [isMenuOpen, setIsMenuOpen] = useState(false);
+            const [scrolled, setScrolled] = useState(false);
+
+            useEffect(() => {
+                const handleScroll = () => {
+                    if (window.scrollY > 50) setScrolled(true);
+                    else setScrolled(false);
+                };
+                window.addEventListener('scroll', handleScroll);
+                return () => window.removeEventListener('scroll', handleScroll);
+            }, []);
+
             return (
-                <header className="fixed top-0 left-0 right-0 z-50 glass border-b border-[#fbbf24]/10 transition-all duration-300">
-                    <div className="container mx-auto px-4 md:px-8 py-3 flex justify-between items-center">
-                        {/* الشعار */}
-                        <div className="flex items-center gap-3">
-                            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#fbbf24] to-[#d97706] flex items-center justify-center shadow-lg shadow-[#fbbf24]/30 overflow-hidden flex-shrink-0">
+                <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'glass py-2 shadow-xl border-b border-[#fbbf24]/20' : 'bg-transparent py-4'}`}>
+                    <div className="container mx-auto px-4 md:px-8 flex justify-between items-center">
+                        {/* الشعار المحدث */}
+                        <div className="flex items-center gap-3 cursor-pointer" onClick={() => window.scrollTo(0,0)}>
+                            <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#fbbf24] to-[#d97706] flex items-center justify-center shadow-xl shadow-[#fbbf24]/20 overflow-hidden border border-[#fbbf24]/30 flex-shrink-0">
                                 <img
                                     src="1000215750.png.jpeg"
                                     alt="شعار ذكاء النسور"
@@ -250,56 +237,56 @@
                                 />
                             </div>
                             <div>
-                                <h1 className="text-xl md:text-2xl font-extrabold tracking-tight leading-tight">
+                                <h1 className="text-2xl font-black tracking-tight leading-none flex items-center gap-1">
                                     <span className="text-white">ذكاء</span>
                                     <span className="text-gradient">النسور</span>
                                 </h1>
-                                <p className="text-[10px] md:text-xs text-[#94a3b8] -mt-1">الرئيس: <span className="text-[#fbbf24]">جميل جمال شمسان</span></p>
+                                <p className="text-[10px] text-[#94a3b8] mt-1">الرئيس: <span className="text-[#fbbf24] font-bold">جميل جمال شمسان</span></p>
                             </div>
                         </div>
 
-                        {/* روابط سطح المكتب */}
+                        {/* قائمة الروابط لسطح المكتب */}
                         <nav className="hidden lg:flex items-center gap-8">
                             <a href="#about" className="nav-link text-sm">من نحن</a>
+                            <a href="#packages" className="nav-link text-sm text-[#fbbf24] font-bold flex items-center gap-1">⭐ باقات الاستثمار</a>
                             <a href="#services" className="nav-link text-sm">خدماتنا</a>
                             <a href="#projects" className="nav-link text-sm">مشاريعنا</a>
-                            <a href="#blog" className="nav-link text-sm">المدونة</a>
+                            <a href="#testimonials" className="nav-link text-sm">آراء العملاء</a>
                             <a href="#contact" className="nav-link text-sm">اتصل بنا</a>
-                            <button className="btn-gold text-sm">استشارة مجانية</button>
+                            <a href="https://wa.me/966562681550" target="_blank" className="btn-gold text-xs px-6 py-3">استشارة مجانية فورية</a>
                         </nav>
 
-                        {/* زر القائمة للجوال */}
-                        <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="lg:hidden text-white focus:outline-none">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
+                        {/* زر القائمة المخصص للهواتف الذكية */}
+                        <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="lg:hidden text-white focus:outline-none p-2 rounded-xl bg-slate-800/50 border border-slate-700">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
                             </svg>
                         </button>
                     </div>
 
-                    {/* القائمة المنبثقة للجوال */}
+                    {/* القائمة المنبثقة للجوال بتأثير حركة زجاجي ممتاز */}
                     {isMenuOpen && (
-                        <div className="lg:hidden bg-[#1e293b]/95 backdrop-blur-xl border-t border-[#fbbf24]/10 p-6 flex flex-col gap-4 text-center">
-                            <a href="#about" className="nav-link text-lg" onClick={() => setIsMenuOpen(false)}>من نحن</a>
-                            <a href="#services" className="nav-link text-lg" onClick={() => setIsMenuOpen(false)}>خدماتنا</a>
-                            <a href="#projects" className="nav-link text-lg" onClick={() => setIsMenuOpen(false)}>مشاريعنا</a>
-                            <a href="#blog" className="nav-link text-lg" onClick={() => setIsMenuOpen(false)}>المدونة</a>
-                            <a href="#contact" className="nav-link text-lg" onClick={() => setIsMenuOpen(false)}>اتصل بنا</a>
-                            <button className="btn-gold w-full">استشارة مجانية</button>
+                        <div className="lg:hidden bg-[#060b18]/95 backdrop-blur-2xl border-b border-[#fbbf24]/20 p-8 flex flex-col gap-5 text-center absolute top-full left-0 w-full shadow-2xl animate-fadeIn">
+                            <a href="#about" className="nav-link text-lg py-1" onClick={() => setIsMenuOpen(false)}>من نحن</a>
+                            <a href="#packages" className="nav-link text-lg text-[#fbbf24] font-bold py-1" onClick={() => setIsMenuOpen(false)}>باقاتنا الاستثمارية</a>
+                            <a href="#services" className="nav-link text-lg py-1" onClick={() => setIsMenuOpen(false)}>خدماتنا</a>
+                            <a href="#projects" className="nav-link text-lg py-1" onClick={() => setIsMenuOpen(false)}>مشاريعنا</a>
+                            <a href="#contact" className="nav-link text-lg py-1" onClick={() => setIsMenuOpen(false)}>اتصل بنا</a>
+                            <a href="https://wa.me/966562681550" target="_blank" className="btn-gold w-full py-4 text-base mt-2">استشارة مجانية</a>
                         </div>
                     )}
                 </header>
             );
         }
 
-        // ----- 2. القسم الرئيسي (Hero) مع خلفية الشعار كعلامة مائية -----
+        // ----- 2. قسم العرض الرئيسي الفخم (Hero Section) -----
         function Hero() {
-            // إضافة خلفية العلامة المائية للشعار (Watermark)
             const watermarkStyle = {
                 backgroundImage: "url('1000215750.png.jpeg')", 
-                backgroundSize: '35% auto',
+                backgroundSize: '30% auto',
                 backgroundRepeat: 'no-repeat',
-                backgroundPosition: 'center 40%',
-                opacity: 0.08,
+                backgroundPosition: 'center center',
+                opacity: 0.05,
                 position: 'absolute',
                 top: 0,
                 left: 0,
@@ -310,59 +297,56 @@
             };
 
             return (
-                <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-28 pb-16">
-                    {/* الخلفية المتحركة (الأشكال) */}
+                <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-36 pb-24 cyber-grid">
                     <div className="bg-shapes">
                         <div className="shape"></div>
                         <div className="shape"></div>
                         <div className="shape"></div>
                     </div>
-
-                    {/* طبقة العلامة المائية للشعار */}
                     <div style={watermarkStyle}></div>
 
-                    {/* المحتوى النصي */}
                     <div className="container mx-auto px-4 md:px-8 text-center relative z-10">
-                        <div className="inline-block mb-4 px-5 py-1.5 rounded-full border border-[#fbbf24]/30 bg-[#fbbf24]/10 text-[#fbbf24] text-sm font-semibold backdrop-blur-sm">
-                            🏆 بقيادة السيد / جميل جمال شمسان
+                        <div className="inline-flex items-center gap-2 mb-6 px-6 py-2 rounded-full border border-[#fbbf24]/40 bg-[#fbbf24]/10 text-[#fbbf24] text-sm font-black backdrop-blur-md shadow-lg shadow-[#fbbf24]/5">
+                            <span>🏆</span> بقيادة رئيس مجلس الإدارة السيد / جميل جمال شمسان
                         </div>
-                        <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight mb-6">
-                            <span className="text-white">نحول </span>
-                            <span className="text-gradient">رؤاك الاستثمارية</span>
+                        <h1 className="text-4xl md:text-6xl lg:text-8xl font-black leading-tight mb-8 tracking-tight">
+                            <span className="text-white">نُحوّل </span>
+                            <span className="text-gradient drop-shadow-2xl">رؤاك الاستثمارية</span>
                             <br />
                             <span className="text-white">إلى </span>
-                            <span className="text-[#38bdf8]">واقع ملموس</span>
+                            <span className="text-[#38bdf8] drop-shadow-[0_0_30px_rgba(56,189,248,0.3)]">واقع ملموس</span>
                         </h1>
-                        <p className="text-lg md:text-xl text-[#94a3b8] max-w-3xl mx-auto mb-10 leading-relaxed">
-                            شركة ذكاء النسور للاستثمار بقيادة رئيس مجلس الإدارة <strong className="text-white">جميل جمال شمسان</strong>،
-                            تقدم حلولاً متكاملة في تأسيس الشركات، الاستشارات المالية، إدارة الأصول، والحوكمة لضمان ريادتك في الأسواق.
+                        <p className="text-lg md:text-2xl text-[#cbd5e1] max-w-4xl mx-auto mb-12 leading-relaxed font-light">
+                            شركة <strong className="text-white font-extrabold">ذكاء النسور للاستثمار</strong> برؤية رئيس مجلس الإدارة <strong className="text-[#fbbf24]">جميل جمال شمسان</strong>، 
+                            تمنحك المفتاح الذهبي لبدء نشاطك التجاري والخدمي في الأسواق السعودية والدولية بأعلى درجات الحوكمة والأمان.
                         </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <button className="btn-gold text-lg px-10 py-4">ابدأ رحلتك الآن</button>
-                            <button className="border border-[#fbbf24] text-[#fbbf24] hover:bg-[#fbbf24] hover:text-[#0b1120] transition-all duration-300 px-10 py-4 rounded-full text-lg font-semibold backdrop-blur-sm">
-                                اكتشف خدماتنا
-                            </button>
+                        <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
+                            <a href="#packages" className="btn-gold text-lg px-12 py-5 w-full sm:w-auto text-center">اكتشف باقات 2026 الحصرية</a>
+                            <a href="#services" className="border-2 border-slate-700 text-white hover:border-[#fbbf24] hover:bg-[#fbbf24]/5 transition-all duration-300 px-12 py-5 rounded-full text-lg font-bold backdrop-blur-sm w-full sm:w-auto text-center">
+                                خدمات رجال الأعمال
+                            </a>
                         </div>
                     </div>
                 </section>
             );
         }
 
-        // ----- 3. قسم الإحصائيات (Stats) -----
+        // ----- 3. قسم الإحصائيات الذكي وجافا سكريبت الأرقام (Stats) -----
         function Stats() {
             const [counts, setCounts] = useState({ projects: 0, clients: 0, offices: 0, awards: 0 });
             const statsRef = useRef(null);
+
             useEffect(() => {
                 const observer = new IntersectionObserver((entries) => {
                     entries.forEach(entry => { if (entry.isIntersecting) animateCounts(); });
-                }, { threshold: 0.3 });
+                }, { threshold: 0.2 });
                 if (statsRef.current) observer.observe(statsRef.current);
                 return () => observer.disconnect();
             }, []);
+
             const animateCounts = () => {
                 const targets = { projects: 1250, clients: 870, offices: 15, awards: 42 };
-                const duration = 2000,
-                    steps = 60;
+                const duration = 2500, steps = 60;
                 let step = 0;
                 const interval = duration / steps;
                 const timer = setInterval(() => {
@@ -374,22 +358,26 @@
                         offices: Math.round(progress * targets.offices),
                         awards: Math.round(progress * targets.awards),
                     });
-                    if (step >= steps) { clearInterval(timer);
-                        setCounts(targets); }
+                    if (step >= steps) { 
+                        clearInterval(timer);
+                        setCounts(targets); 
+                    }
                 }, interval);
             };
+
             return (
-                <section ref={statsRef} className="py-20 bg-[#0f172a] border-y border-[#fbbf24]/10">
-                    <div className="container mx-auto px-4 md:px-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <section ref={statsRef} className="py-24 bg-[#0a0f1d] border-y border-[#fbbf24]/10 relative z-10">
+                    <div className="container mx-auto px-4 md:px-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                         {[
-                            { label: 'مشروع منجز', value: counts.projects, color: 'text-[#fbbf24]' },
-                            { label: 'عميل راضٍ', value: counts.clients, color: 'text-[#38bdf8]' },
-                            { label: 'مكتب حول العالم', value: counts.offices, color: 'text-[#a78bfa]' },
-                            { label: 'جائزة عالمية', value: counts.awards, color: 'text-[#34d399]' }
+                            { label: 'مشروع استثماري منجز', value: counts.projects, color: 'text-[#fbbf24]' },
+                            { label: 'عميل شريك معنا', value: counts.clients, color: 'text-[#38bdf8]' },
+                            { label: 'مكاتب دولية وإقليمية', value: counts.offices, color: 'text-[#a78bfa]' },
+                            { label: 'جائزة حوكمة وتميز', value: counts.awards, color: 'text-[#34d399]' }
                         ].map((item, i) => (
-                            <div key={i} className="p-6 rounded-2xl bg-gradient-to-b from-[#1e293b]/50 to-transparent border border-[#fbbf24]/10">
-                                <h3 className={`text-4xl md:text-5xl font-black ${item.color}`}>{item.value}+</h3>
-                                <p className="text-[#94a3b8] mt-2 font-semibold">{item.label}</p>
+                            <div key={i} className="p-8 rounded-3xl glass border border-[#fbbf24]/5 hover:border-[#fbbf24]/20 transition-all duration-300">
+                                <h3 className={`text-4xl md:text-6xl font-black tracking-tight ${item.color}`}>{item.value}+</h3>
+                                <div className="w-10 h-0.5 bg-slate-700 mx-auto my-3"></div>
+                                <p className="text-[#94a3b8] text-sm md:text-base font-bold">{item.label}</p>
                             </div>
                         ))}
                     </div>
@@ -397,51 +385,195 @@
             );
         }
 
-        /// ----- 4. قسم "من نحن" (About) -----
+        // ----- 4. قسم باقات الفرص الاستثنائية الجديد بالكامل (The Advanced Custom Packages Hub) -----
+        function Packages() {
+            const [activeTab, setActiveTab] = useState('saudi'); // saudi or global
+
+            return (
+                <section id="packages" className="py-32 relative z-10 bg-[#060b18] cyber-grid">
+                    <div className="container mx-auto px-4 md:px-8">
+                        <div className="text-center mb-16 fade-section">
+                            <span className="text-[#fbbf24] text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full bg-[#fbbf24]/10 border border-[#fbbf24]/20">فرص حصرية لعام 2026</span>
+                            <h2 className="text-4xl md:text-6xl font-black mt-4 mb-6 text-white">
+                                باقاتنا <span className="text-gradient">الاستثمارية الاستثنائية</span>
+                            </h2>
+                            <p className="text-[#94a3b8] max-w-3xl mx-auto text-lg md:text-xl font-light">
+                                أسس شركتك الآن وحلق في سماء الريادة الاقتصادية محلياً ودولياً عبر بوابتنا الموثوقة 100%.
+                            </p>
+
+                            {/* أزرار التبديل الذكية بجافا سكريبت */}
+                            <div className="flex justify-center mt-10">
+                                <div className="p-1.5 rounded-full glass border border-slate-700 inline-flex gap-2">
+                                    <button 
+                                        onClick={() => setActiveTab('saudi')} 
+                                        className={`px-8 py-3 rounded-full text-base font-bold transition-all duration-300 ${activeTab === 'saudi' ? 'bg-gradient-to-r from-[#fbbf24] to-[#d97706] text-[#060b18] shadow-lg' : 'text-slate-400 hover:text-white'}`}
+                                    >
+                                        🇸🇦 الاستثمار داخل المملكة (ملكّية 100%)
+                                    </button>
+                                    <button 
+                                        onClick={() => setActiveTab('global')} 
+                                        className={`px-8 py-3 rounded-full text-base font-bold transition-all duration-300 ${activeTab === 'global' ? 'bg-gradient-to-r from-[#fbbf24] to-[#d97706] text-[#060b18] shadow-lg' : 'text-slate-400 hover:text-white'}`}
+                                    >
+                                        🌍 التجارة الإلكترونية العالمية
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* محتوى الباقة الأولى: تأسيس الشركات في السعودية */}
+                        {activeTab === 'saudi' && (
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-6xl mx-auto opacity-100 transition-opacity duration-500">
+                                {/* باقة الأنشطة التجارية */}
+                                <div className="card-modern relative overflow-hidden p-8 md:p-10 flex flex-col justify-between border-2 border-[#fbbf24]/10 hover:border-[#fbbf24]">
+                                    <div className="absolute top-0 left-0 bg-[#fbbf24] text-[#060b18] text-xs font-black px-4 py-1.5 rounded-br-2xl">الأكثر طلباً</div>
+                                    <div>
+                                        <div className="text-4xl mb-4">🏢</div>
+                                        <h3 className="text-2xl font-black text-white mb-2">1. باقة الأنشطة التجارية</h3>
+                                        <p className="text-slate-400 text-sm mb-6">الحل المتكامل والمتطور لتوسيع أعمالك في أقوى اقتصاد بالمنطقة مع إقامة مستثمر.</p>
+                                        <div className="text-3xl font-black text-[#fbbf24] mb-6 pb-6 border-b border-slate-800 flex items-baseline gap-2">
+                                            <span>35,000</span>
+                                            <span className="text-sm font-bold text-slate-400">ريال سعودي فقط</span>
+                                        </div>
+                                        <h4 className="text-white font-bold text-base mb-4">مزايا ومكونات الباقة الشاملة:</h4>
+                                        <ul className="space-y-3 text-slate-300 text-sm mb-8">
+                                            <li className="flex items-center gap-3"><span className="text-[#fbbf24] text-lg">✓</span> إصدار السجل التجاري السعودي وعقد التأسيس بالكامل.</li>
+                                            <li className="flex items-center gap-3"><span className="text-[#fbbf24] text-lg">✓</span> استخراج رخصة الاستثمار الرسمية من وزارة الاستثمار.</li>
+                                            <li className="flex items-center gap-3"><span className="text-[#fbbf24] text-lg">✓</span> تأسيس فرعين دوليين معتمدين في (أمريكا ورواندا).</li>
+                                            <li className="flex items-center gap-3"><span className="text-[#fbbf24] text-lg">✓</span> الاستحواذ القانوني الشامل على شركة بريطانية معترف بها.</li>
+                                            <li className="flex items-center gap-3"><span className="text-[#fbbf24] text-lg">✓</span> تفعيل وتجهيز كافة المنصات الحكومية الرقمية للبدء الفوري.</li>
+                                        </ul>
+                                    </div>
+                                    <a href={`https://wa.me/966562681550?text=${encodeURIComponent('مرحباً شركة ذكاء النسور، أريد الاستفسار والبدء في باقة الأنشطة التجارية (35 ألف ريال)')}`} target="_blank" className="btn-gold w-full py-4 text-center mt-auto">
+                                        ابدأ التأسيس التجاري الآن
+                                    </a>
+                                </div>
+
+                                {/* باقة الأنشطة الخدمية */}
+                                <div className="card-modern p-8 md:p-10 flex flex-col justify-between border-2 border-slate-800 hover:border-[#38bdf8]">
+                                    <div>
+                                        <div className="text-4xl mb-4">🤝</div>
+                                        <h3 className="text-2xl font-black text-white mb-2">2. باقة الأنشطة الخدمية</h3>
+                                        <p className="text-slate-400 text-sm mb-6">مصممة خصيصاً للشركات الاستشارية والخدمية ورواد الأعمال الراغبين بالانطلاق الاحترافي.</p>
+                                        <div className="text-3xl font-black text-[#38bdf8] mb-6 pb-6 border-b border-slate-800 flex items-baseline gap-2">
+                                            <span>25,000</span>
+                                            <span className="text-sm font-bold text-slate-400">ريال سعودي فقط</span>
+                                        </div>
+                                        <h4 className="text-white font-bold text-base mb-4">مزايا ومكونات الباقة الشاملة:</h4>
+                                        <ul className="space-y-3 text-slate-300 text-sm mb-8">
+                                            <li className="flex items-center gap-3"><span className="text-[#38bdf8] text-lg">✓</span> إصدار السجل التجاري السعودي وعقد التأسيس الخدمي.</li>
+                                            <li className="flex items-center gap-3"><span className="text-[#38bdf8] text-lg">✓</span> استخراج رخصة الاستثمار والبدء القانوني بنسبة أمان 100%.</li>
+                                            <li className="flex items-center gap-3"><span className="text-[#38bdf8] text-lg">✓</span> الاستحواذ الكامل على شركة بريطانية مسجلة رسمياً.</li>
+                                            <li className="flex items-center gap-3"><span className="text-[#38bdf8] text-lg">✓</span> تفعيل وربط جميع المنصات الحكومية والوزارية ذات الصلة.</li>
+                                        </ul>
+                                    </div>
+                                    <a href={`https://wa.me/966562681550?text=${encodeURIComponent('مرحباً شركة ذكاء النسور، أريد الاستفسار والبدء في باقة الأنشطة الخدمية (25 ألف ريال)')}`} target="_blank" className="btn-gold w-full py-4 text-center mt-auto! bg-gradient-to-r from-sky-400 to-blue-600 text-white shadow-sky-500/10">
+                                        ابدأ التأسيس الخدمي الآن
+                                    </a>
+                                </div>
+                            </div>
+                        )}
+
+                        {/* محتوى الباقة الثانية: أمازون والمنصات العالمية */}
+                        {activeTab === 'global' && (
+                            <div className="max-w-4xl mx-auto opacity-100 transition-opacity duration-500">
+                                <div className="card-modern p-8 md:p-12 border-2 border-[#34d399]/40 hover:border-[#34d399] relative">
+                                    <div className="absolute top-5 left-5 bg-[#34d399]/10 text-[#34d399] border border-[#34d399]/30 text-xs font-bold px-4 py-1.5 rounded-full">جاهز للربط بأمازون وباي بال</div>
+                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                                        <div className="md:col-span-2">
+                                            <div className="flex items-center gap-3 mb-4">
+                                                <span className="text-4xl">🌍</span>
+                                                <h3 className="text-3xl font-black text-white">الباقة المتكاملة للتجارة الإلكترونية الدولية</h3>
+                                            </div>
+                                            <p className="text-slate-300 text-base mb-6 leading-relaxed">
+                                                افتح حساب تاجر معتمد على **Amazon**، ومنصات الدفع العالمية مثل **Stripe و PayPal** دون أي عقبات بنكية أو قانونية من خلال امتلاك شركة رسمية في أوروبا.
+                                            </p>
+                                            <h4 className="text-white font-bold text-base mb-3">محتويات الباقة الشاملة الفاخرة:</h4>
+                                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-slate-300 text-sm mb-6">
+                                                <div className="flex items-center gap-2">🇩🇰 تأسيس شركة بالدنمارك، النرويج 🇳🇴 أو السويد 🇸🇪</div>
+                                                <div className="flex items-center gap-2">💳 فتح حساب بنكي تجاري واستلام الأرباح سريعا</div>
+                                                <div className="flex items-center gap-2">🌐 إنشاء موقع إلكتروني احترافي خاص بنشاطك</div>
+                                                <div className="flex items-center gap-2">🛍️ تفعيل بوابة دفع إلكترونية متطورة للمبيعات</div>
+                                                <div className="flex items-center gap-2">🚀 إصدار بطاقة ماستر كارد لإدارة مصاريف الإعلانات</div>
+                                            </div>
+                                        </div>
+                                        <div className="text-center bg-slate-900/50 p-6 rounded-2xl border border-slate-800 flex flex-col justify-center h-full">
+                                            <span className="text-slate-400 text-sm font-bold block mb-1">سعر الباقة الشاملة</span>
+                                            <span className="text-4xl font-black text-[#34d399] block mb-6">2000 دولار <span className="text-xs font-normal text-slate-400 block mt-1">فقط لا غير</span></span>
+                                            <a href={`https://wa.me/966562681550?text=${encodeURIComponent('مرحباً شركة ذكاء النسور، أريد الاستفسار والتسجيل في باقة التجارة الإلكترونية العالمية وتأسيس شركة أوروبية (2000 دولار)')}`} target="_blank" className="btn-gold w-full py-4 text-center bg-gradient-to-r from-emerald-400 to-teal-600 text-white shadow-emerald-500/10">
+                                                ابدأ مشروعك العالمي
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+
+                        {/* ميزات تفاعلية لشرح أسباب اختيار الشركة */}
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mt-20">
+                            {[
+                                { title: "خبرة واحترافية مطلقة", desc: "نضمن نجاح أعمالك الاستثمارية واختصار كافة المعاملات الزمنية.", icon: "⚡" },
+                                { title: "حلول متكاملة من الألف للياء", desc: "تغطي كافة الاحتياجات القانونية واللوجستية والتقنية والبنكية في آن واحد.", icon: "💎" },
+                                { title: "إجراءات قانونية موثوقة 100%", desc: "عمل عالي المستوى والأمان لمعاملاتك وبياناتك تحت سقف معايير الحوكمة الشفافة.", icon: "🔒" }
+                            ].map((item, idx) => (
+                                <div key={idx} className="glass p-6 rounded-2xl border border-slate-800 text-center">
+                                    <div className="text-3xl mb-2">{item.icon}</div>
+                                    <h4 className="text-white font-bold text-lg mb-2">{item.title}</h4>
+                                    <p className="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            );
+        }
+
+        // ----- 5. قسم "من نحن" المطور مع الحفاظ التام على هوية رئيس مجلس الإدارة وعناصر الريادة (About) -----
         function About() {
             return (
-                <section id="about" className="py-24 relative">
+                <section id="about" className="py-32 relative z-10 bg-[#0a0f1d]">
                     <div className="container mx-auto px-4 md:px-8">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                             <div className="fade-section order-2 lg:order-1">
-                                <span className="text-[#fbbf24] font-bold text-sm tracking-wider">من نحن</span>
-                                <h2 className="text-3xl md:text-5xl font-black mb-6 leading-tight">
+                                <span className="text-[#fbbf24] font-black text-xs uppercase tracking-widest px-4 py-1.5 rounded-full bg-[#fbbf24]/10 border border-[#fbbf24]/20">من نحن قادة الريادة</span>
+                                <h2 className="text-4xl md:text-6xl font-black mt-4 mb-6 leading-tight">
                                     <span className="text-white">شركة </span>
                                     <span className="text-gradient">ذكاء النسور</span>
                                     <span className="text-white block">للريادة والاستثمار</span>
                                 </h2>
-                                <p className="text-[#94a3b8] text-lg leading-relaxed mb-4">
-                                    تأسست شركة ذكاء النسور للاستثمار على يد نخبة من الخبراء في المجال المالي والإداري،
-                                    وتتولى قيادتها حاليًا <strong className="text-white">السيد جميل جمال شمسان</strong>،
-                                    الذي يمتلك رؤية ثاقبة في تطوير الأعمال وتحقيق أعلى عوائد الاستثمار لعملائنا.
+                                <p className="text-[#cbd5e1] text-lg leading-relaxed mb-6">
+                                    تأسست شركة **ذكاء النسور للاستثمار** على يد نخبة من كبار الخبراء في المجال المالي، الاستثماري، والإداري في المنطقة. وتتولى قيادتها وتوجيهها الاستراتيجي حاليًا <strong className="text-white font-extrabold">السيد جميل جمال شمسان</strong>، الذي يمتلك رؤية ثاقبة وخبرات طويلة في تذليل العقبات وتطوير الكيانات لتتبوأ أعلى مراتب الربحية والنمو لعملائنا.
                                 </p>
-                                <p className="text-[#94a3b8] text-lg leading-relaxed">
-                                    نؤمن بأن النجاح الحقيقي يبدأ من الشريك الاستراتيجي، ونعمل وفق أعلى معايير الحوكمة والشفافية
-                                    لنكون الخيار الأول لرواد الأعمال في الشرق الأوسط.
+                                <p className="text-[#94a3b8] text-base leading-relaxed mb-8">
+                                    نحن نؤمن بأن النجاح الحقيقي ينبع من صناعة الشراكات الاستراتيجية المستدامة، ولذلك نعمل وفق أدق المعايير التنظيمية والقانونية لنكون الخيار الأول والوجهة الأكثر موثوقية لرواد الأعمال والمستثمرين في الشرق الأوسط والعالم.
                                 </p>
-                                <div className="mt-8 flex items-center gap-6">
-                                    <div className="w-16 h-0.5 bg-[#fbbf24]"></div>
-                                    <span className="text-[#fbbf24] font-semibold">١٥ عاماً من التميز</span>
+                                <div className="flex items-center gap-6 bg-slate-900/40 p-4 rounded-2xl border border-slate-800">
+                                    <div className="w-2 h-12 bg-gradient-to-b from-[#fbbf24] to-[#d97706] rounded-full"></div>
+                                    <div>
+                                        <span className="text-[#fbbf24] font-bold text-lg block">١٥ عاماً من التميز والصدارة</span>
+                                        <span className="text-slate-400 text-xs">نصنع الفرص ونبني المستقبل بأحدث أدوات الاستثمار</span>
+                                    </div>
                                 </div>
                             </div>
+
+                            {/* بطاقة رئيس مجلس الإدارة مع التعديلات والأوسمة الفاخرة المطلوبة */}
                             <div className="order-1 lg:order-2 flex justify-center fade-section">
-                                <div className="relative w-full max-w-sm aspect-square rounded-3xl overflow-hidden border-2 border-[#fbbf24]/20 shadow-2xl shadow-[#fbbf24]/10">
-                                    <div className="w-full h-full bg-gradient-to-br from-[#1e293b] to-[#0f172a] flex items-center justify-center flex-col text-center p-6">
-                                        <div className="w-36 h-36 rounded-full border-4 border-[#fbbf24] overflow-hidden shadow-xl mb-4">
-                                            {/* تم وضع اسم ملف صورتك الفعلي المرفوع في المستودع بدقة عالية هنا */}
-                                            <img 
-                                                src="jamal.jpg.jpeg" 
-                                                alt="جميل جمال شمسان - رئيس مجلس الإدارة" 
-                                                className="w-full h-full object-cover object-top"
-                                            />
-                                        </div>
-                                        <h3 className="text-2xl font-bold text-white">جميل جمال شمسان</h3>
-                                        <p className="text-[#fbbf24] font-semibold">رئيس مجلس الإدارة</p>
-                                        <div className="mt-2 flex gap-2 justify-center text-xs font-bold tracking-wide">
-                                            <span className="bg-[#fbbf24]/10 text-[#fbbf24] px-2.5 py-1 rounded-full border border-[#fbbf24]/20">استثمار</span>
-                                            <span className="bg-[#38bdf8]/10 text-[#38bdf8] px-2.5 py-1 rounded-full border border-[#38bdf8]/20">قيادة</span>
-                                            <span className="bg-[#34d399]/10 text-[#34d399] px-2.5 py-1 rounded-full border border-[#34d399]/20">ريادة</span>
-                                        </div>
+                                <div className="relative w-full max-w-md aspect-square rounded-3xl overflow-hidden border-2 border-[#fbbf24]/30 shadow-2xl bg-slate-950 p-8 flex flex-col items-center justify-center text-center ceo-card-glow transition-all duration-500 group">
+                                    <div className="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-950 to-[#060b18] z-0"></div>
+                                    <div className="relative z-10 w-44 h-44 rounded-full border-4 border-[#fbbf24] overflow-hidden shadow-2xl mb-6 group-hover:scale-105 transition-transform duration-500">
+                                        <img 
+                                            src="jamal.jpg.jpeg" 
+                                            alt="جميل جمال شمسان - رئيس مجلس الإدارة" 
+                                            className="w-full h-full object-cover object-top"
+                                        />
+                                    </div>
+                                    <h3 className="relative z-10 text-3xl font-black text-white tracking-wide">جميل جمال شمسان</h3>
+                                    <p className="relative z-10 text-[#fbbf24] font-extrabold text-lg mt-1">رئيس مجلس الإدارة</p>
+                                    
+                                    {/* أوسمة: استثمار - قيادة - ريادة المدمجة بدقة فخمة */}
+                                    <div className="relative z-10 mt-6 flex gap-3 justify-center text-xs font-black tracking-widest uppercase">
+                                        <span className="bg-[#fbbf24]/10 text-[#fbbf24] px-4 py-2 rounded-xl border border-[#fbbf24]/30 shadow-sm shadow-[#fbbf24]/5">استثمار</span>
+                                        <span className="bg-sky-500/10 text-sky-400 px-4 py-2 rounded-xl border border-sky-500/30 shadow-sm shadow-sky-500/5">قيادة</span>
+                                        <span className="bg-emerald-500/10 text-emerald-400 px-4 py-2 rounded-xl border border-emerald-500/30 shadow-sm shadow-emerald-500/5">ريادة</span>
                                     </div>
                                 </div>
                             </div>
@@ -451,35 +583,37 @@
             );
         }
 
-        // ----- 5. قسم الخدمات (Services) -----
+        // ----- 6. قسم الخدمات (Services) -----
         function Services() {
             const services = [
-                { icon: "🏢", title: "تأسيس الشركات", desc: "إنشاء كيانات قانونية في السعودية والخارج بأسرع الإجراءات." },
-                { icon: "📊", title: "الاستشارات المالية", desc: "خطط استثمارية ذكية تعزز أرباحك وتقلل المخاطر." },
-                { icon: "⚖️", title: "الحوكمة والامتثال", desc: "أنظمة حوكمة متطابقة مع المعايير العالمية." },
-                { icon: "🌍", title: "التوسع الدولي", desc: "فتح أسواق جديدة وتأسيس فروع في أوروبا وآسيا." },
-                { icon: "💼", title: "إدارة الأصول", desc: "إدارة محافظ بأعلى عائد وأقل مخاطرة ممكنة." },
-                { icon: "📈", title: "التسويق الرقمي", desc: "استراتيجيات رقمية مبتكرة لنمو أعمالك في العالم الافتراضي." },
+                { icon: "🏢", title: "تأسيس الشركات بملكية 100%", desc: "إنشاء وتهيئة الكيانات القانونية للأجانب والمحليين بالسعودية بأسرع وقت." },
+                { icon: "📊", title: "الاستشارات المالية المتقدمة", desc: "دراسات جدوى وخطط استثمارية ذكية تعزز العوائد وتقلص حجم المخاطر." },
+                { icon: "⚖️", title: "الحوكمة والامتثال الدولي", desc: "بناء وصياغة لوائح تنظيمية متطابقة بالكامل مع معايير الحوكمة العالمية." },
+                { icon: "🌍", title: "التوسع وحسابات المتاجر الدولية", desc: "تأسيس شركات أوروبية وفتح بوابات الدفع الإلكتروني للتجارة الدولية." },
+                { icon: "💼", title: "إدارة المحافظ والأصول", desc: "نوفر لرجال الأعمال خدمات إدارة الأصول لضمان نمو السيولة النقدية بشكل مستمر." },
+                { icon: "📈", title: "استراتيجيات التسويق والنمو", desc: "حلول تسويقية رقمية لضمان ريادة اسم شركتك في أروقة الأسواق المستهدفة." },
             ];
             return (
-                <section id="services" className="py-24 bg-[#0f172a]">
+                <section id="services" className="py-32 bg-[#060b18] relative z-10">
                     <div className="container mx-auto px-4 md:px-8">
-                        <div className="text-center mb-16 fade-section">
-                            <h2 className="text-3xl md:text-5xl font-black mb-4">
-                                <span className="text-white">خدماتنا </span>
-                                <span className="text-gradient">الاستثنائية</span>
+                        <div className="text-center mb-20 fade-section">
+                            <span className="text-[#fbbf24] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full bg-[#fbbf24]/10 border border-[#fbbf24]/20">حلولنا وحزم أعمالنا</span>
+                            <h2 className="text-4xl md:text-6xl font-black mt-4 mb-4 text-white">
+                                خدماتنا <span className="text-gradient">الاستثنائية المتكاملة</span>
                             </h2>
-                            <p className="text-[#94a3b8] max-w-2xl mx-auto text-lg">
-                                نقدم حلولاً متكاملة تحت إشراف <strong className="text-white">جميل جمال شمسان</strong> وفريقنا الخبير.
+                            <p className="text-[#94a3b8] max-w-2xl mx-auto text-lg font-light">
+                                باقة من أرفع الحلول الاستشارية والعملية المصممة خصيصاً لتطلعات رواد الأعمال وقادة القطاعات.
                             </p>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {services.map((s, i) => (
-                                <div key={i} className="card-modern fade-section">
-                                    <div className="text-5xl mb-4">{s.icon}</div>
-                                    <h3 className="text-2xl font-bold text-white mb-3">{s.title}</h3>
-                                    <p className="text-[#94a3b8] leading-relaxed">{s.desc}</p>
-                                    <div className="mt-6 w-12 h-1 bg-gradient-to-r from-[#fbbf24] to-[#d97706] rounded-full"></div>
+                                <div key={i} className="card-modern p-8 fade-section flex flex-col justify-between">
+                                    <div>
+                                        <div className="text-5xl mb-6 bg-slate-900 w-16 h-16 rounded-2xl flex items-center justify-center border border-slate-800 shadow-inner">{s.icon}</div>
+                                        <h3 className="text-2xl font-bold text-white mb-4">{s.title}</h3>
+                                        <p className="text-[#94a3b8] text-sm leading-relaxed mb-6">{s.desc}</p>
+                                    </div>
+                                    <div className="w-16 h-1 bg-gradient-to-r from-[#fbbf24] to-[#d97706] rounded-full mt-auto"></div>
                                 </div>
                             ))}
                         </div>
@@ -488,30 +622,29 @@
             );
         }
 
-        // ----- 6. قسم المشاريع (Projects) -----
+        // ----- 7. قسم المشاريع (Projects) -----
         function Projects() {
             const projects = [
-                { title: "مشروع البحر الأحمر", cat: "تطوير سياحي", emoji: "🏖️" },
-                { title: "مدينة المعرفة", cat: "تكنولوجيا", emoji: "💻" },
-                { title: "مجمع النسور السكني", cat: "عقار", emoji: "🏗️" },
+                { title: "مشروع البحر الأحمر الاستراتيجي", cat: "تطوير سياحي واستثماري وعالمي", emoji: "🏖️" },
+                { title: "حاضنة مدينة المعرفة الرقمية", cat: "تكنولوجيا وبوابات دفع ذكية", emoji: "💻" },
+                { title: "مجمع النسور السكني المتكامل", cat: "عقارات وتأسيس البنى التحتية", emoji: "🏗️" },
             ];
             return (
-                <section id="projects" className="py-24">
+                <section id="projects" className="py-32 bg-[#0a0f1d] relative z-10">
                     <div className="container mx-auto px-4 md:px-8">
-                        <div className="text-center mb-16 fade-section">
-                            <h2 className="text-3xl md:text-5xl font-black mb-4">
-                                <span className="text-white">أحدث </span>
-                                <span className="text-gradient">مشاريعنا</span>
+                        <div className="text-center mb-20 fade-section">
+                            <h2 className="text-4xl md:text-6xl font-black mb-4 text-white">
+                                أحدث <span className="text-gradient">مشاريعنا الاستثمارية</span>
                             </h2>
-                            <p className="text-[#94a3b8]">نحو مستقبل استثماري مشرق</p>
+                            <p className="text-[#94a3b8] text-lg font-light">بناء اقتصادي متين نحو غدٍ مالي واعد ومزدهر</p>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             {projects.map((p, i) => (
-                                <div key={i} className="card-modern text-center fade-section">
-                                    <div className="text-7xl mb-4">{p.emoji}</div>
-                                    <h3 className="text-2xl font-bold text-white">{p.title}</h3>
-                                    <p className="text-[#fbbf24] font-semibold">{p.cat}</p>
-                                    <div className="mt-4 h-1 w-16 bg-[#fbbf24] mx-auto rounded-full"></div>
+                                <div key={i} className="card-modern text-center p-8 fade-section hover:scale-[1.03] transition-all">
+                                    <div className="text-8xl mb-6 animate-pulse">{p.emoji}</div>
+                                    <h3 className="text-2xl font-bold text-white mb-2">{p.title}</h3>
+                                    <p className="text-[#fbbf24] font-bold text-xs tracking-wide uppercase px-3 py-1 bg-[#fbbf24]/5 inline-block rounded-full border border-[#fbbf24]/10">{p.cat}</p>
+                                    <div className="mt-6 h-0.5 w-16 bg-[#fbbf24] mx-auto rounded-full"></div>
                                 </div>
                             ))}
                         </div>
@@ -520,35 +653,34 @@
             );
         }
 
-        // ----- 7. قسم آراء العملاء (Testimonials) -----
+        // ----- 8. قسم آراء العملاء (Testimonials) -----
         function Testimonials() {
             const list = [
-                { name: "أحمد السالم", role: "رئيس مجلس إدارة", text: "فضلًا لا أمرًا، ذكاء النسور غيرت مستقبل استثماراتنا. فريق محترف بمعنى الكلمة." },
-                { name: "سارة النوري", role: "مديرة تنفيذية", text: "الحوكمة والاستشارات المالية كانت سبباً رئيسياً في نجاح توسعنا لأوروبا." },
-                { name: "محمد العتيبي", role: "مستثمر", text: "أمانة، دقة، وااحترافية. أنصح أي رائد أعمال بالتعامل معهم دون تردد." },
+                { name: "أحمد السالم", role: "رئيس مجلس إدارة شركة مالية", text: "فضلاً لا أمراً، ذكاء النسور غيرت وبدلت بوصلة ومستقبل استثماراتنا داخل السوق. فريق محترف وقانوني لأبعد الحدود." },
+                { name: "سارة النوري", role: "مديرة تنفيذية لمجموعة الفهد", text: "تجهيز الحوكمة الرقمية وتأسيس شركاتنا الأوروبية كان سبباً وجيهاً ورئيسياً في نجاح توسعنا وحصدنا للمبيعات." },
+                { name: "محمد العتيبي", role: "مستثمر مستقل ورائد أعمال", text: "أمانة، دقة متناهية، وسرعة فائقة في التنفيذ. أنصح وبشدة أي رائد أعمال طموح بالتعامل معهم دون أدنى تردد." },
             ];
             return (
-                <section id="testimonials" className="py-24 bg-[#0f172a] border-y border-[#fbbf24]/10">
+                <section id="testimonials" className="py-32 bg-[#060b18] border-y border-[#fbbf24]/10 relative z-10">
                     <div className="container mx-auto px-4 md:px-8">
-                        <div className="text-center mb-16 fade-section">
-                            <h2 className="text-3xl md:text-5xl font-black mb-4">
-                                <span className="text-white">ماذا يقول </span>
-                                <span className="text-gradient">عملاؤنا</span>
+                        <div className="text-center mb-20 fade-section">
+                            <h2 className="text-4xl md:text-6xl font-black mb-4 text-white">
+                                ثقة <span className="text-gradient">تتحدث عن نفسها</span>
                             </h2>
-                            <p className="text-[#94a3b8]">ثقة تتحدث عن نفسها</p>
+                            <p className="text-[#94a3b8] text-lg">شركاء النجاح يعبرون عن تجربتهم معنا</p>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             {list.map((item, idx) => (
-                                <div key={idx} className="glass p-8 rounded-3xl border border-[#fbbf24]/10 fade-section">
-                                    <div className="text-[#fbbf24] text-3xl mb-4">“</div>
-                                    <p className="text-[#cbd5e1] leading-relaxed mb-6 text-lg">{item.text}</p>
-                                    <div className="flex items-center gap-4">
-                                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#fbbf24] to-[#d97706] flex items-center justify-center text-[#0b1120] font-black text-xl">
+                                <div key={idx} className="glass-premium p-8 rounded-3xl border border-slate-800 fade-section hover:border-[#fbbf24]/30 transition-all">
+                                    <div className="text-[#fbbf24] text-5xl mb-4 leading-none">“</div>
+                                    <p className="text-[#cbd5e1] leading-relaxed mb-6 text-base font-light italic">"{item.text}"</p>
+                                    <div className="flex items-center gap-4 mt-6 pt-4 border-t border-slate-800">
+                                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#fbbf24] to-[#d97706] flex items-center justify-center text-[#060b18] font-black text-lg shadow-md">
                                             {item.name[0]}
                                         </div>
                                         <div>
-                                            <h4 className="font-bold text-white">{item.name}</h4>
-                                            <p className="text-sm text-[#94a3b8]">{item.role}</p>
+                                            <h4 className="font-bold text-white text-sm md:text-base">{item.name}</h4>
+                                            <p className="text-xs text-[#94a3b8]">{item.role}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -559,30 +691,33 @@
             );
         }
 
-        // ----- 8. قسم المدونة (Blog) -----
+        // ----- 9. قسم المدونة الاستشارية المحدثة (Blog) -----
         function Blog() {
             const articles = [
-                { title: "كيف تختار الدولة الأنسب لتأسيس شركتك؟", date: "١ مايو ٢٠٢٦", emoji: "📝" },
-                { title: "أفضل ٥ استراتيجيات للاستثمار في ٢٠٢٦", date: "٢٥ أبريل ٢٠٢٦", emoji: "📈" },
-                { title: "الحوكمة الرقمية.. مستقبل الشركات العائلية", date: "١٠ أبريل ٢٠٢٦", emoji: "⚙️" },
+                { title: "كيف تختار الدولة الأنسب لتأسيس شركتك الدولية؟", date: "١ مايو ٢٠٢٦", emoji: "📝" },
+                { title: "أفضل ٥ استراتيجيات للاستثمار المالي والريادي في ٢٠٢٦", date: "٢٥ أبريل ٢٠٢٦", emoji: "📈" },
+                { title: "الحوكمة الرقمية الشاملة.. طوق النجاة للشركات العائلية", date: "١٠ أبريل ٢٠٢٦", emoji: "⚙️" },
             ];
             return (
-                <section id="blog" className="py-24">
+                <section id="blog" className="py-32 bg-[#0a0f1d] relative z-10">
                     <div className="container mx-auto px-4 md:px-8">
-                        <div className="text-center mb-16 fade-section">
-                            <h2 className="text-3xl md:text-5xl font-black mb-4">
-                                <span className="text-white">آخر </span>
-                                <span className="text-gradient">المقالات</span>
+                        <div className="text-center mb-20 fade-section">
+                            <h2 className="text-4xl md:text-6xl font-black mb-4 text-white">
+                                المقالات <span className="text-gradient">والمدونة الاستشارية</span>
                             </h2>
-                            <p className="text-[#94a3b8]">نصائح وخبرات من فريقنا الاستشاري</p>
+                            <p className="text-[#94a3b8] text-lg">إضاءات معرفية وخبرات عميقة من فريقنا المتخصص</p>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             {articles.map((a, i) => (
-                                <div key={i} className="card-modern fade-section">
-                                    <div className="text-5xl mb-4">{a.emoji}</div>
-                                    <h3 className="text-xl font-bold text-white mb-2">{a.title}</h3>
-                                    <p className="text-[#94a3b8] text-sm">{a.date}</p>
-                                    <div className="mt-4 inline-block text-[#fbbf24] font-semibold border-b border-[#fbbf24]/30">اقرأ المزيد →</div>
+                                <div key={i} className="card-modern p-6 md:p-8 fade-section flex flex-col justify-between">
+                                    <div>
+                                        <div className="text-5xl mb-4">{a.emoji}</div>
+                                        <h3 className="text-xl font-bold text-white mb-3 hover:text-[#fbbf24] transition duration-300 cursor-pointer">{a.title}</h3>
+                                        <p className="text-[#64748b] text-xs font-semibold">{a.date}</p>
+                                    </div>
+                                    <div className="mt-6">
+                                        <a href="https://wa.me/966562681550" target="_blank" className="inline-block text-[#fbbf24] text-xs font-black tracking-wider uppercase border-b border-[#fbbf24]/30 pb-1 hover:border-[#fbbf24] transition duration-300">اقرأ المقال الكامل ←</a>
+                                    </div>
                                 </div>
                             ))}
                         </div>
@@ -591,123 +726,122 @@
             );
         }
 
-        // ----- 9. قسم التواصل (Contact) مع العناوين والجوال والإيميل -----
+        // ----- 10. قسم التواصل وعرض البيانات الموحدة الفخم (Contact) -----
         function Contact() {
             return (
-                <section id="contact" className="py-24 bg-[#0f172a] border-t border-[#fbbf24]/10">
+                <section id="contact" className="py-32 bg-[#060b18] border-t border-slate-800 relative z-10 cyber-grid">
                     <div className="container mx-auto px-4 md:px-8">
-                        <div className="text-center mb-16 fade-section">
-                            <h2 className="text-3xl md:text-5xl font-black mb-4">
-                                <span className="text-white">تواصل </span>
-                                <span className="text-gradient">معنا</span>
+                        <div className="text-center mb-20 fade-section">
+                            <h2 className="text-4xl md:text-6xl font-black mb-4 text-white">
+                                تواصل <span className="text-gradient">مع خبرائنا الآن</span>
                             </h2>
-                            <p className="text-[#94a3b8]">نحن في خدمتكم على مدار الساعة</p>
+                            <p className="text-[#94a3b8] text-lg">نهيئ لك سبل النجاح والرد والامتثال على مدار الساعة</p>
                         </div>
 
-                        {/* بطاقات المعلومات (العناوين والجوال) */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12">
-                            <div className="info-card fade-section">
-                                <div className="text-[#fbbf24] text-3xl mb-3">📍</div>
-                                <h4 className="text-white font-bold text-lg">المقر الرئيسي - الرياض</h4>
-                                <p className="text-[#94a3b8] text-sm">المملكة العربية السعودية، الرياض<br /> شارع الأمير عبدالعزيز بن عبدالعزيز</p>
+                        {/* بطاقات المعلومات الرقمية والجغرافية */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-16">
+                            <div className="info-card p-6 bg-slate-900/50 rounded-2xl border border-slate-800 text-center hover:border-[#fbbf24] transition duration-300">
+                                <div className="text-[#fbbf24] text-4xl mb-3">📍</div>
+                                <h4 className="text-white font-bold text-base mb-1">المقر الرئيسي - الرياض</h4>
+                                <p className="text-slate-400 text-xs">شارع الأمير عبدالعزيز بن عبدالعزيز، الرياض، المملكة العربية السعودية</p>
                             </div>
-                            <div className="info-card fade-section">
-                                <div className="text-[#fbbf24] text-3xl mb-3">📍</div>
-                                <h4 className="text-white font-bold text-lg">الفرع - جدة</h4>
-                                <p className="text-[#94a3b8] text-sm">المملكة العربية السعودية، جدة<br /> حي الفيصلية</p>
+                            <div className="info-card p-6 bg-slate-900/50 rounded-2xl border border-slate-800 text-center hover:border-[#fbbf24] transition duration-300">
+                                <div className="text-[#fbbf24] text-4xl mb-3">📍</div>
+                                <h4 className="text-white font-bold text-base mb-1">الفرع الإقليمي - جدة</h4>
+                                <p className="text-slate-400 text-xs">حي الفيصلية الاستثماري، جدة، المملكة العربية السعودية</p>
                             </div>
-                            <div className="info-card fade-section">
-                                <div className="text-[#fbbf24] text-3xl mb-3">📞</div>
-                                <h4 className="text-white font-bold text-lg">رقم الجوال</h4>
-                                <p className="text-[#94a3b8] text-sm" dir="ltr">+966562681550</p>
+                            <div className="info-card p-6 bg-slate-900/50 rounded-2xl border border-slate-800 text-center hover:border-[#fbbf24] transition duration-300">
+                                <div className="text-[#fbbf24] text-4xl mb-3">📞</div>
+                                <h4 className="text-white font-bold text-base mb-1">الهاتف والواتساب الموحد</h4>
+                                <p className="text-slate-400 text-sm font-mono tracking-wider" dir="ltr">+966 56 268 1550</p>
                             </div>
-                            <div className="info-card fade-section">
-                                <div className="text-[#fbbf24] text-3xl mb-3">✉️</div>
-                                <h4 className="text-white font-bold text-lg">البريد الإلكتروني</h4>
-                                <p className="text-[#94a3b8] text-sm">abshersky0@gmail.com</p>
+                            <div className="info-card p-6 bg-slate-900/50 rounded-2xl border border-slate-800 text-center hover:border-[#fbbf24] transition duration-300">
+                                <div className="text-[#fbbf24] text-4xl mb-3">✉️</div>
+                                <h4 className="text-white font-bold text-base mb-1">البريد الإلكتروني الرسمي</h4>
+                                <p className="text-slate-400 text-sm font-mono">abshersky0@gmail.com</p>
                             </div>
                         </div>
 
-                        {/* نموذج الاتصال */}
-                        <div className="max-w-4xl mx-auto glass p-8 md:p-12 rounded-3xl border border-[#fbbf24]/10 fade-section">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <input type="text" placeholder="الاسم الكامل" className="w-full bg-[#0b1120] border border-[#334155] rounded-xl px-5 py-4 text-white placeholder-[#64748b] focus:outline-none focus:border-[#fbbf24] transition" />
-                                <input type="email" placeholder="البريد الإلكتروني" className="w-full bg-[#0b1120] border border-[#334155] rounded-xl px-5 py-4 text-white placeholder-[#64748b] focus:outline-none focus:border-[#fbbf24] transition" />
+                        {/* نموذج مراسلة تفاعلي متطور */}
+                        <div className="max-w-4xl mx-auto glass-premium p-8 md:p-12 rounded-3xl border border-slate-800 fade-section">
+                            <form onSubmit={(e) => e.preventDefault()} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <input type="text" placeholder="الاسم الاستثماري الكامل" className="w-full bg-[#060b18] border border-slate-800 rounded-xl px-5 py-4 text-white placeholder-slate-500 focus:outline-none focus:border-[#fbbf24] transition" />
+                                <input type="email" placeholder="عنوان البريد الإلكتروني" className="w-full bg-[#060b18] border border-slate-800 rounded-xl px-5 py-4 text-white placeholder-slate-500 focus:outline-none focus:border-[#fbbf24] transition" />
                                 <div className="md:col-span-2">
-                                    <input type="text" placeholder="الموضوع" className="w-full bg-[#0b1120] border border-[#334155] rounded-xl px-5 py-4 text-white placeholder-[#64748b] focus:outline-none focus:border-[#fbbf24] transition" />
+                                    <input type="text" placeholder="الموضوع أو نوع النشاط المراد تأسيسه" className="w-full bg-[#060b18] border border-slate-800 rounded-xl px-5 py-4 text-white placeholder-slate-500 focus:outline-none focus:border-[#fbbf24] transition" />
                                 </div>
                                 <div className="md:col-span-2">
-                                    <textarea rows="5" placeholder="اكتب رسالتك هنا..." className="w-full bg-[#0b1120] border border-[#334155] rounded-xl px-5 py-4 text-white placeholder-[#64748b] focus:outline-none focus:border-[#fbbf24] transition resize-none"></textarea>
+                                    <textarea rows="5" placeholder="تفاصيل تطلعاتك أو حجم الاستثمار المراد مناقشته برفق..." className="w-full bg-[#060b18] border border-slate-800 rounded-xl px-5 py-4 text-white placeholder-slate-500 focus:outline-none focus:border-[#fbbf24] transition resize-none"></textarea>
                                 </div>
                                 <div className="md:col-span-2 text-center">
-                                    <button className="btn-gold text-lg px-12 py-4 w-full md:w-auto">إرسال الرسالة</button>
+                                    <button className="btn-gold text-lg px-12 py-4 w-full md:w-auto shadow-lg">إرسال تفاصيل المعاملة</button>
                                 </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </section>
             );
         }
 
-        // ----- 10. التذييل (Footer) -----
+        // ----- 11. التذييل الفاخر الشامل (Footer) -----
         function Footer() {
             return (
-                <footer className="bg-[#0a0f1a] border-t border-[#fbbf24]/10 pt-16 pb-8">
+                <footer className="bg-[#030712] border-t border-slate-900 pt-20 pb-10 relative z-10">
                     <div className="container mx-auto px-4 md:px-8">
-                        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
                             <div>
-                                <div className="flex items-center gap-3 mb-4">
-                                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#fbbf24] to-[#d97706] flex items-center justify-center shadow-lg overflow-hidden">
-                                        <span className="text-[#0b1120] font-black text-xl">ن</span>
+                                <div className="flex items-center gap-3 mb-6">
+                                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#fbbf24] to-[#d97706] flex items-center justify-center shadow-lg overflow-hidden">
+                                        <img src="1000215750.png.jpeg" alt="ذكاء النسور" className="w-full h-full object-cover" />
                                     </div>
-                                    <h1 className="text-xl font-extrabold">
-                                        <span className="text-white">ذكاء</span>
-                                        <span className="text-gradient">النسور</span>
+                                    <h1 className="text-2xl font-black text-white">
+                                        ذكاء <span className="text-gradient">النسور</span>
                                     </h1>
                                 </div>
-                                <p className="text-[#94a3b8] text-sm leading-relaxed">
-                                    بقيادة رئيس مجلس الإدارة <strong className="text-white">جميل جمال شمسان</strong>.
-                                    رواد في تقديم الحلول الاستثمارية المتكاملة.
+                                <p className="text-slate-400 text-sm leading-relaxed">
+                                    شركة رائدة وعالمية بقيادة رئيس مجلس الإدارة <strong className="text-white font-bold">جميل جمال شمسان</strong>. 
+                                    مفتاحك الآمن والمضمون لتأسيس الشركات وصناعة الريادة في الشرق الأوسط.
                                 </p>
                             </div>
                             <div>
-                                <h4 className="text-white font-bold text-lg mb-4">فروعنا</h4>
-                                <ul className="space-y-3 text-[#94a3b8] text-sm">
-                                    <li><span className="text-[#fbbf24]">📍</span> الرياض - شارع الأمير عبدالعزيز</li>
-                                    <li><span className="text-[#fbbf24]">📍</span> جدة - حي الفيصلية</li>
-                                    <li className="pt-2"><span className="text-[#fbbf24]">📞</span> +966562681550</li>
-                                    <li><span className="text-[#fbbf24]">✉️</span> abshersky0@gmail.com</li>
+                                <h4 className="text-white font-extrabold text-base mb-6 border-r-4 border-[#fbbf24] pr-3">فروعنا الرسمية</h4>
+                                <ul className="space-y-3 text-slate-400 text-sm">
+                                    <li>📍 الرياض - شارع الأمير عبدالعزيز</li>
+                                    <li>📍 جدة - حي الفيصلية الاستثماري</li>
+                                    <li className="pt-2 font-mono text-xs">📞 +966 56 268 1550</li>
+                                    <li className="font-mono text-xs">✉️ abshersky0@gmail.com</li>
                                 </ul>
                             </div>
                             <div>
-                                <h4 className="text-white font-bold text-lg mb-4">روابط سريعة</h4>
-                                <ul className="space-y-3 text-[#94a3b8] text-sm">
-                                    <li><a href="#" className="hover:text-[#fbbf24] transition">الرئيسية</a></li>
-                                    <li><a href="#about" className="hover:text-[#fbbf24] transition">من نحن</a></li>
-                                    <li><a href="#services" className="hover:text-[#fbbf24] transition">الخدمات</a></li>
-                                    <li><a href="#contact" className="hover:text-[#fbbf24] transition">اتصل بنا</a></li>
+                                <h4 className="text-white font-extrabold text-base mb-6 border-r-4 border-[#fbbf24] pr-3">روابط وملاحة سريعة</h4>
+                                <ul className="space-y-3 text-slate-400 text-sm font-medium">
+                                    <li><a href="#" className="hover:text-[#fbbf24] transition">الواجهة الرئيسية</a></li>
+                                    <li><a href="#about" className="hover:text-[#fbbf24] transition">من نحن والقادة</a></li>
+                                    <li><a href="#packages" className="hover:text-[#fbbf24] font-bold text-[#fbbf24] transition">الباقات الاستثمارية</a></li>
+                                    <li><a href="#services" className="hover:text-[#fbbf24] transition">حزم الخدمات</a></li>
                                 </ul>
                             </div>
                             <div>
-                                <h4 className="text-white font-bold text-lg mb-4">تابعنا</h4>
-                                <div className="flex gap-4">
+                                <h4 className="text-white font-extrabold text-base mb-6 border-r-4 border-[#fbbf24] pr-3">منصات ومتابعة</h4>
+                                <div className="flex gap-3">
                                     {['X', 'in', 'ig', 'yt'].map((s, i) => (
-                                        <div key={i} className="w-12 h-12 rounded-full bg-[#1e293b] flex items-center justify-center text-white hover:bg-[#fbbf24] hover:text-[#0b1120] transition-all duration-300 cursor-pointer border border-[#334155] hover:border-[#fbbf24]">
-                                            <span className="font-black text-sm">{s}</span>
-                                        </div>
+                                        <a href="https://wa.me/966562681550" target="_blank" key={i} className="w-11 h-11 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:bg-[#fbbf24] hover:text-[#060b18] hover:border-[#fbbf24] transition-all duration-300 font-bold text-sm">
+                                            {s}
+                                        </a>
                                     ))}
                                 </div>
+                                <p className="text-xs text-slate-500 mt-4 leading-relaxed">تابع آخر تحديثاتنا الوزارية والأنشطة الاقتصادية عبر قنواتنا الحية.</p>
                             </div>
                         </div>
-                        <div className="text-center border-t border-[#1e293b] pt-8 text-sm text-[#64748b]">
-                            © {new Date().getFullYear()} شركة ذكاء النسور للاستثمار - الرئيس: جميل جمال شمسان. جميع الحقوق محفوظة.
+                        <div className="text-center border-t border-slate-900 pt-8 text-xs text-slate-500 font-medium">
+                            © {new Date().getFullYear()} شركة ذكاء النسور للاستثمار - رئيس مجلس الإدارة: جميل جمال شمسان. جميع الحقوق محفوظة وموثقة قانونياً.
                         </div>
                     </div>
                 </footer>
             );
         }
 
-        // ----- المكون الرئيسي (App) مع مراقبة التمرير -----
+        // ----- المكون الرئيسي والجامع للتطبيق بالكامل مع مراقب جافا سكريبت الذكي للتمرير (App) -----
         function App() {
             useEffect(() => {
                 const observer = new IntersectionObserver((entries) => {
@@ -716,17 +850,18 @@
                             entry.target.classList.add('visible');
                         }
                     });
-                }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+                }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
 
                 document.querySelectorAll('.fade-section').forEach(el => observer.observe(el));
                 return () => observer.disconnect();
             }, []);
 
             return (
-                <div className="overflow-hidden">
+                <div className="overflow-hidden bg-[#060b18]">
                     <Header />
                     <Hero />
                     <Stats />
+                    <Packages />
                     <About />
                     <Services />
                     <Projects />
@@ -738,7 +873,7 @@
             );
         }
 
-        // ----- تشغيل التطبيق -----
+        // ----- تشغيل وبناء التطبيق على الـ DOM المخصص له -----
         const root = ReactDOM.createRoot(document.getElementById('root'));
         root.render(<App />);
     </script>
