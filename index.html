@@ -244,7 +244,7 @@
                         <div className="flex items-center gap-3">
                             <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#fbbf24] to-[#d97706] flex items-center justify-center shadow-lg shadow-[#fbbf24]/30 overflow-hidden flex-shrink-0">
                                 <img
-                                    src="logo.png"
+                                    src="1000215750.png.jpeg"
                                     alt="شعار ذكاء النسور"
                                     className="w-full h-full object-cover"
                                 />
@@ -295,7 +295,7 @@
         function Hero() {
             // إضافة خلفية العلامة المائية للشعار (Watermark)
             const watermarkStyle = {
-                backgroundImage: "url('logo.png')", // 🟢 ضع اسم ملف الشعار هنا
+                backgroundImage: "url('1000215750.png.jpeg')", 
                 backgroundSize: '35% auto',
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'center 40%',
@@ -397,7 +397,7 @@
             );
         }
 
-        // ----- 4. قسم "من نحن" (About) مع ذكر الرئيس -----
+        // ----- 4. قسم "من نحن" (About) - تم هنا تعديل صورة رئيس مجلس الإدارة وعناوين القيادة -----
         function About() {
             return (
                 <section id="about" className="py-24 relative">
@@ -426,14 +426,22 @@
                             </div>
                             <div className="order-1 lg:order-2 flex justify-center fade-section">
                                 <div className="relative w-full max-w-sm aspect-square rounded-3xl overflow-hidden border-2 border-[#fbbf24]/20 shadow-2xl shadow-[#fbbf24]/10">
-                                    {/* صورة الرئيس التنفيذي أو مقر الشركة (ضع رابط صورتك) */}
+                                    {/* 🟢 تعديل ذكي: استبدال الإيموجي بالصورة الشخصية الاحترافية للرئيس */}
                                     <div className="w-full h-full bg-gradient-to-br from-[#1e293b] to-[#0f172a] flex items-center justify-center flex-col text-center p-6">
-                                        <div className="w-32 h-32 rounded-full bg-[#fbbf24]/20 border-4 border-[#fbbf24] flex items-center justify-center text-6xl mb-4">
-                                            👨‍💼
+                                        <div className="w-36 h-36 rounded-full border-4 border-[#fbbf24] overflow-hidden shadow-xl mb-4">
+                                            <img 
+                                                src="jamal.jpg" 
+                                                alt="جميل جمال شمسان - رئيس مجلس الإدارة" 
+                                                className="w-full h-full object-cover object-top"
+                                            />
                                         </div>
                                         <h3 className="text-2xl font-bold text-white">جميل جمال شمسان</h3>
                                         <p className="text-[#fbbf24] font-semibold">رئيس مجلس الإدارة</p>
-                                        <p className="text-[#94a3b8] text-sm mt-2">استثمار • قيادة • ريادة</p>
+                                        <div className="mt-2 flex gap-2 justify-center text-xs font-bold tracking-wide">
+                                            <span className="bg-[#fbbf24]/10 text-[#fbbf24] px-2.5 py-1 rounded-full border border-[#fbbf24]/20">استثمار</span>
+                                            <span className="bg-[#38bdf8]/10 text-[#38bdf8] px-2.5 py-1 rounded-full border border-[#38bdf8]/20">قيادة</span>
+                                            <span className="bg-[#34d399]/10 text-[#34d399] px-2.5 py-1 rounded-full border border-[#34d399]/20">ريادة</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -517,7 +525,7 @@
             const list = [
                 { name: "أحمد السالم", role: "رئيس مجلس إدارة", text: "فضلًا لا أمرًا، ذكاء النسور غيرت مستقبل استثماراتنا. فريق محترف بمعنى الكلمة." },
                 { name: "سارة النوري", role: "مديرة تنفيذية", text: "الحوكمة والاستشارات المالية كانت سبباً رئيسياً في نجاح توسعنا لأوروبا." },
-                { name: "محمد العتيبي", role: "مستثمر", text: "أمانة، دقة، واحترافية. أنصح أي رائد أعمال بالتعامل معهم دون تردد." },
+                { name: "محمد العتيبي", role: "مستثمر", text: "أمانة، دقة، وااحترافية. أنصح أي رائد أعمال بالتعامل معهم دون تردد." },
             ];
             return (
                 <section id="testimonials" className="py-24 bg-[#0f172a] border-y border-[#fbbf24]/10">
@@ -650,7 +658,6 @@
                             <div>
                                 <div className="flex items-center gap-3 mb-4">
                                     <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#fbbf24] to-[#d97706] flex items-center justify-center shadow-lg overflow-hidden">
-                                        {/* الشعار في الفوتر */}
                                         <span className="text-[#0b1120] font-black text-xl">ن</span>
                                     </div>
                                     <h1 className="text-xl font-extrabold">
