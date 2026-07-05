@@ -227,11 +227,11 @@
             return (
                 <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'glass py-2 shadow-xl border-b border-[#fbbf24]/20' : 'bg-transparent py-4'}`}>
                     <div className="container mx-auto px-4 md:px-8 flex justify-between items-center">
-                        {/* الشعار المحدث */}
+                        {/* الشعار المحدث بالصورة المعدلة */}
                         <div className="flex items-center gap-3 cursor-pointer" onClick={() => window.scrollTo(0,0)}>
                             <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#fbbf24] to-[#d97706] flex items-center justify-center shadow-xl shadow-[#fbbf24]/20 overflow-hidden border border-[#fbbf24]/30 flex-shrink-0">
                                 <img
-                                    src="1000215750.png.jpeg"
+                                    src="89_n.jpg"
                                     alt="شعار ذكاء النسور"
                                     className="w-full h-full object-cover"
                                 />
@@ -282,7 +282,7 @@
         // ----- 2. قسم العرض الرئيسي الفخم (Hero Section) -----
         function Hero() {
             const watermarkStyle = {
-                backgroundImage: "url('1000215750.png.jpeg')", 
+                backgroundImage: "url('89_n.jpg')", 
                 backgroundSize: '30% auto',
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'center center',
@@ -387,7 +387,7 @@
 
         // ----- 4. قسم باقات الفرص الاستثنائية الجديد بالكامل (The Advanced Custom Packages Hub) -----
         function Packages() {
-            const [activeTab, setActiveTab] = useState('saudi'); // saudi or global
+            const [activeTab, setActiveTab] = useState('saudi');
 
             return (
                 <section id="packages" className="py-32 relative z-10 bg-[#060b18] cyber-grid">
@@ -401,7 +401,6 @@
                                 أسس شركتك الآن وحلق في سماء الريادة الاقتصادية محلياً ودولياً عبر بوابتنا الموثوقة 100%.
                             </p>
 
-                            {/* أزرار التبديل الذكية بجافا سكريبت */}
                             <div className="flex justify-center mt-10">
                                 <div className="p-1.5 rounded-full glass border border-slate-700 inline-flex gap-2">
                                     <button 
@@ -420,10 +419,8 @@
                             </div>
                         </div>
 
-                        {/* محتوى الباقة الأولى: تأسيس الشركات في السعودية */}
                         {activeTab === 'saudi' && (
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-6xl mx-auto opacity-100 transition-opacity duration-500">
-                                {/* باقة الأنشطة التجارية */}
                                 <div className="card-modern relative overflow-hidden p-8 md:p-10 flex flex-col justify-between border-2 border-[#fbbf24]/10 hover:border-[#fbbf24]">
                                     <div className="absolute top-0 left-0 bg-[#fbbf24] text-[#060b18] text-xs font-black px-4 py-1.5 rounded-br-2xl">الأكثر طلباً</div>
                                     <div>
@@ -448,7 +445,6 @@
                                     </a>
                                 </div>
 
-                                {/* باقة الأنشطة الخدمية */}
                                 <div className="card-modern p-8 md:p-10 flex flex-col justify-between border-2 border-slate-800 hover:border-[#38bdf8]">
                                     <div>
                                         <div className="text-4xl mb-4">🤝</div>
@@ -466,14 +462,13 @@
                                             <li className="flex items-center gap-3"><span className="text-[#38bdf8] text-lg">✓</span> تفعيل وربط جميع المنصات الحكومية والوزارية ذات الصلة.</li>
                                         </ul>
                                     </div>
-                                    <a href={`https://wa.me/966562681550?text=${encodeURIComponent('مرحباً شركة ذكاء النسور، أريد الاستفسار والبدء في باقة الأنشطة الخدمية (25 ألف ريال)')}`} target="_blank" className="btn-gold w-full py-4 text-center mt-auto! bg-gradient-to-r from-sky-400 to-blue-600 text-white shadow-sky-500/10">
+                                    <a href={`https://wa.me/966562681550?text=${encodeURIComponent('مرحباً شركة ذكاء النسور، أريد الاستفسار والبدء في باقة الأنشطة الخدمية (25 ألف ريال)')}`} target="_blank" className="btn-gold w-full py-4 text-center mt-auto bg-gradient-to-r from-sky-400 to-blue-600 text-white shadow-sky-500/10">
                                         ابدأ التأسيس الخدمي الآن
                                     </a>
                                 </div>
                             </div>
                         )}
 
-                        {/* محتوى الباقة الثانية: أمازون والمنصات العالمية */}
                         {activeTab === 'global' && (
                             <div className="max-w-4xl mx-auto opacity-100 transition-opacity duration-500">
                                 <div className="card-modern p-8 md:p-12 border-2 border-[#34d399]/40 hover:border-[#34d399] relative">
@@ -490,7 +485,7 @@
                                             <h4 className="text-white font-bold text-base mb-3">محتويات الباقة الشاملة الفاخرة:</h4>
                                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-slate-300 text-sm mb-6">
                                                 <div className="flex items-center gap-2">🇩🇰 تأسيس شركة بالدنمارك، النرويج 🇳🇴 أو السويد 🇸🇪</div>
-                                                <div className="flex items-center gap-2">💳 فتح حساب بنكي تجاري واستلام الأرباح سريعا</div>
+                                                <div className="flex items-center gap-2">💳 فتح حساب بنكي تجاري واستلاف الأرباح سريعا</div>
                                                 <div className="flex items-center gap-2">🌐 إنشاء موقع إلكتروني احترافي خاص بنشاطك</div>
                                                 <div className="flex items-center gap-2">🛍️ تفعيل بوابة دفع إلكترونية متطورة للمبيعات</div>
                                                 <div className="flex items-center gap-2">🚀 إصدار بطاقة ماستر كارد لإدارة مصاريف الإعلانات</div>
@@ -508,7 +503,6 @@
                             </div>
                         )}
 
-                        {/* ميزات تفاعلية لشرح أسباب اختيار الشركة */}
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mt-20">
                             {[
                                 { title: "خبرة واحترافية مطلقة", desc: "نضمن نجاح أعمالك الاستثمارية واختصار كافة المعاملات الزمنية.", icon: "⚡" },
@@ -569,7 +563,6 @@
                                     <h3 className="relative z-10 text-3xl font-black text-white tracking-wide">جميل جمال شمسان</h3>
                                     <p className="relative z-10 text-[#fbbf24] font-extrabold text-lg mt-1">رئيس مجلس الإدارة</p>
                                     
-                                    {/* أوسمة: استثمار - قيادة - ريادة المدمجة بدقة فخمة */}
                                     <div className="relative z-10 mt-6 flex gap-3 justify-center text-xs font-black tracking-widest uppercase">
                                         <span className="bg-[#fbbf24]/10 text-[#fbbf24] px-4 py-2 rounded-xl border border-[#fbbf24]/30 shadow-sm shadow-[#fbbf24]/5">استثمار</span>
                                         <span className="bg-sky-500/10 text-sky-400 px-4 py-2 rounded-xl border border-sky-500/30 shadow-sm shadow-sky-500/5">قيادة</span>
@@ -738,7 +731,6 @@
                             <p className="text-[#94a3b8] text-lg">نهيئ لك سبل النجاح والرد والامتثال على مدار الساعة</p>
                         </div>
 
-                        {/* بطاقات المعلومات الرقمية والجغرافية */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-16">
                             <div className="info-card p-6 bg-slate-900/50 rounded-2xl border border-slate-800 text-center hover:border-[#fbbf24] transition duration-300">
                                 <div className="text-[#fbbf24] text-4xl mb-3">📍</div>
@@ -757,12 +749,11 @@
                             </div>
                             <div className="info-card p-6 bg-slate-900/50 rounded-2xl border border-slate-800 text-center hover:border-[#fbbf24] transition duration-300">
                                 <div className="text-[#fbbf24] text-4xl mb-3">✉️</div>
-                                <h4 className="text-white font-bold text-base mb-1">البريد الإلكتروني الرسمي</h4>
+                                <h4 className="text-white font-bold text-base mb-1">الالكتروني الرسمي</h4>
                                 <p className="text-slate-400 text-sm font-mono">abshersky0@gmail.com</p>
                             </div>
                         </div>
 
-                        {/* نموذج مراسلة تفاعلي متطور */}
                         <div className="max-w-4xl mx-auto glass-premium p-8 md:p-12 rounded-3xl border border-slate-800 fade-section">
                             <form onSubmit={(e) => e.preventDefault()} className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <input type="text" placeholder="الاسم الاستثماري الكامل" className="w-full bg-[#060b18] border border-slate-800 rounded-xl px-5 py-4 text-white placeholder-slate-500 focus:outline-none focus:border-[#fbbf24] transition" />
@@ -791,8 +782,9 @@
                         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
                             <div>
                                 <div className="flex items-center gap-3 mb-6">
+                                    {/* تحديث صورة الشعار في الفوتر أيضاً */}
                                     <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#fbbf24] to-[#d97706] flex items-center justify-center shadow-lg overflow-hidden">
-                                        <img src="1000215750.png.jpeg" alt="ذكاء النسور" className="w-full h-full object-cover" />
+                                        <img src="89_n.jpg" alt="ذكاء النسور" className="w-full h-full object-cover" />
                                     </div>
                                     <h1 className="text-2xl font-black text-white">
                                         ذكاء <span className="text-gradient">النسور</span>
@@ -841,7 +833,7 @@
             );
         }
 
-        // ----- المكون الرئيسي والجامع للتطبيق بالكامل مع مراقب جافا سكريبت الذكي للتمرير (App) -----
+        // ----- المكون الرئيسي والجامع للتطبيق بالكامل -----
         function App() {
             useEffect(() => {
                 const observer = new IntersectionObserver((entries) => {
